@@ -1,8 +1,6 @@
 
 Markovsky: A markov-chains bot for IRC
-Project: http://sourceforge.net/projects/markovsky
-Contact: mauvehead@users.sourceforge.net
-	 nate@geeks.linux.com
+Project: http://github.com/Mego/Markovsky
 
 	Table of Contents
 	1. About
@@ -47,7 +45,7 @@ Contact: mauvehead@users.sourceforge.net
 	stage of development and probably won't work on all platforms. If you encounter
 	any problems please open a ticket at our project website:
 
-	http://sourceforge.net/projects/markovsky/support
+	https://github.com/Mego/Markovsky/issues
 	
 	After running make, you'll end up with two executables - markovsky-irc and
 	markovsky-linein, that is, the markovsky that communicates on IRC or linein.
