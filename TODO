@@ -1,0 +1,11 @@
+
+===============================================================
+ Markovsky TODO List
+===============================================================
+
+ * Add a new command to print a known sentence matching a keyword
+ * Add a new command to create a random sentence based on a keyword
+ * Prevent bot from logging lines that are directly addressing himself (markovsky <text>)
+ * Expand on ignore and add !ignore command to set individual users to ignore input
+ * Add !top10 command to display top 10 known words
+

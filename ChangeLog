@@ -1,0 +1,26 @@
+
+11/10/2009: v0.53
+- added the !ignore command with add/delete options for modifying the ignore list
+
+11/09/2009: v0.53
+- added header files to Makefile.am for proper dist building
+- dropping beta suffix from version string
+- fixed make error about "deprecated conversion from string constant to ‘char*’" by adding proper casting
+
+11/04/2009: v0.53 beta
+- rewrote README with new support for automake
+- split Credits from README to AUTHORS
+- added configure AUTHORS configure.in NEWS Makefile.am for automake support (type ./configure && make)
+- removed GNUmakefile Makefile as they are no longer needed
+
+10/27/2009: v0.53 beta
+- added ignore field to seeborg-irc.cfg and the code required to read
+  from that list and ignore any users matching the nickname, names
+  are currently hardcoded and not supporting !ignore command yet
+
+08/06/2009 v0.53 beta
+- fixed hardcoded serverport overruling setting from seeborg-irc.cfg
+
+10/27/2009: v0.5 beta
+- initial fork/source cleanup from seeborg project
+

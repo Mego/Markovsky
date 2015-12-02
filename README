@@ -1,0 +1,113 @@
+
+Markovsky: A markov-chains bot for IRC
+Project: http://sourceforge.net/projects/markovsky
+Contact: mauvehead@users.sourceforge.net
+	 nate@geeks.linux.com
+
+	Table of Contents
+	1. About
+	2. Compiling
+	3. Running
+	4. Portability
+	5. Credits
+
+
+1. ABOUT
+====================================================================================
+
+	Markovsky is a continuation on the SeeBorg project written by Eugene 'HMage' Bujak.
+	This project was started due to the lack of continued development of the existing
+	SeeBorg project. I personally love and enjoy this bot greatly and wanted to see it
+	continue and grow.
+	
+	Markovsky is a random phrase bot that will sit on IRC channel, learning words,
+	and periodically (configurable) replying with something that doesn't make
+	much sense at all, but sometimes it's at least funny.
+	
+	It can learn in any language, not just english, but for better character
+	processing (like case conversion), you will need to set appropriately
+	your system locale.
+	
+	It uses BotNet library written by Christophe 'CALMEJANE' to connect and
+	interact with IRC servers. The library is included in the tarball.
+
+
+2. COMPILING
+====================================================================================
+
+	1. Quick and Dirty
+		$ ./configure
+		$ make
+
+	2. Explanation
+	
+	To compile you must need to run ./configure to generate a Makefile. Once this
+	is done you can read the Makefiles and make any changes required, then type `make'
+	and fix the errors which will be displayed, if any. Markovsky is in a very early
+	stage of development and probably won't work on all platforms. If you encounter
+	any problems please open a ticket at our project website:
+
+	http://sourceforge.net/projects/markovsky/support
+	
+	After running make, you'll end up with two executables - markovsky-irc and
+	markovsky-linein, that is, the markovsky that communicates on IRC or linein.
+	The linein is useful for offline chat with the bot and to test the
+	modifications done to the dictionary.
+
+
+3. RUNNING
+====================================================================================
+
+	Without any parameters, markovsky-irc reads configuration from markovsky-irc.cfg
+	located in current working directory. If it doesn't exist, it will create one
+	and terminate, suggesting you to inspect the config file, that's a good idea.
+	
+	
+	Config settings:
+	----------------
+	server         - server to connect to (default: none)
+	serverport     - port of the server to connect to (default: 6667)
+	nickname       - nickname (default: Markovsky)
+	username       - username (default: Markovsky)
+	realname       - realname (default: I am a Markovsky bot)
+	quitmessage    - quit message (default: This concludes our irregularly scheduled test, thank you.)
+	learning       - '1' if learning new words is enabled, '0' if disabled
+	                 (default: 1)
+	
+	replyrate      - Bot's general reply rate, in percent (default: 1)
+	replynick      - Bot's reply rate to his nickname, in percent (default: 33)
+	replymagic     - Bot's reply rate to magic words set in 'magicwords',
+	                 in percent (default: 33)
+	autosaveperiod - Autosave period, in seconds (default: 600)
+	channels       - Space separated channel list to autojoin on connect
+	                 (default: #test #markovsky)
+	magicwords     - Space separated magic word list to reply to according to
+	                 replymagic value, useful if bot has alternative nicknames,
+	                 like russian. (no default)
+	owners         - Space separated bot owners' nickname list, the owner's
+	                 hostname will be locked after each bot restart. (no default)
+	ignore         - Space separated list of names the bot will ignore and not
+        	         record to the chat log index
+
+4. PORTABILITY
+====================================================================================
+
+	Markovsky compiles succesfully with GCC v4.3.3 on Linux 2.6.x (32/64bit) but has not
+	been tested on other platforms.
+	
+	SeeBorg compiles succesfully with v2.95.3, GCC v3.2, GCC v3.2.2 and MSVC v6.0.
+	Tested succesfully on Linux 2.6.x, Linux 2.4.x, FreeBSD 4.6.2, mingw32 and Win32.
+	
+	I see no reason why it shouldn't compile and run on any other platform
+	that is supported by botnet library and supports standard C++.
+	
+	If compiling under mingw32 and cygwin, you would want to change the 
+	"markovsky_irc_LDFLAGS =  -lpthread" and remove "-lpthread" instead
+	replacing it with "-lwsock32".
+
+
+5. CREDITS
+====================================================================================
+
+See AUTHORS
+
